@@ -3,9 +3,19 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Database\Seeders\{ExpenseCategoriesSeeder, IncomeCategoriesSeeder, WalletSeeder};
 
 class DatabaseSeeder extends Seeder
 {
+
+    public static function seedersClass(): array
+    {
+        return [
+            IncomeCategoriesSeeder::class,
+            ExpenseCategoriesSeeder::class,
+            WalletSeeder::class,
+        ];
+    }
     /**
      * Seed the application's database.
      *
@@ -13,6 +23,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
+        $this->call($this->seedersClass());
     }
 }
