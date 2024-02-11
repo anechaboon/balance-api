@@ -19,6 +19,7 @@ class CreateExpensesTable extends Migration
             $table->string('memo',255);
             $table->double('amount', 10, 2)->nullable();
             $table->unsignedBigInteger('wallet_id')->nullable();
+            $table->unsignedBigInteger('user_id')->nullable();
             $table->foreign('user_id')->references('id')->on('users');
             $table->boolean('status')->default(true);
             $table->timestamp('created_date')->default(DB::raw('CURRENT_TIMESTAMP'));
