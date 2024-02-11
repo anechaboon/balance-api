@@ -56,8 +56,8 @@ class IncomeController extends Controller
             DB::beginTransaction();
 
             $payload = request()->all();
-            $payload['created_date'] = date('Y-m-d H:i:s');
-            $payload['updated_date'] = date('Y-m-d H:i:s');
+            $payload['created_at'] = date('Y-m-d H:i:s');
+            $payload['updated_at'] = date('Y-m-d H:i:s');
             $payload['status'] = 1;
             $res = Incomes::create($payload);
 
@@ -68,7 +68,7 @@ class IncomeController extends Controller
             $user = User::find($res['user_id']);
             $user->income = $user->income + $amount;
             $user->balance = $user->balance + $amount;
-            $user->updated_date = date('Y-m-d H:i:s');
+            $user->updated_at = date('Y-m-d H:i:s');
             $user->save();
 
             DB::commit();

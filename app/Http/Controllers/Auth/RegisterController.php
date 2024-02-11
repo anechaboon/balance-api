@@ -34,8 +34,8 @@ class RegisterController extends Controller
             'full_name' => $request->full_name,
             'email' => $request->email,
             'password' => Hash::make(base64_decode($request->password)),
-            'created_date' => date('Y-m-d H:i:s'),
-            'updated_date' => date('Y-m-d H:i:s'),
+            'created_at' => date('Y-m-d H:i:s'),
+            'updated_at' => date('Y-m-d H:i:s'),
         ]);
         // return [
         //     'all' => Hash::make(base64_decode($request->password)),

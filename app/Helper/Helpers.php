@@ -17,7 +17,7 @@ class Helpers
         $user = User::find($res['user_id']);
         $user->expense = $user->expense + $amount;
         $user->balance = $user->balance - $amount;
-        $user->updated_date = date('Y-m-d H:i:s');
+        $user->updated_at = date('Y-m-d H:i:s');
         $user->save();
     }
 }

@@ -22,8 +22,8 @@ class CreateExpensesTable extends Migration
             $table->unsignedBigInteger('user_id')->nullable();
             $table->foreign('user_id')->references('id')->on('users');
             $table->boolean('status')->default(true);
-            $table->timestamp('created_date')->default(DB::raw('CURRENT_TIMESTAMP'));
-            $table->timestamp('updated_date')->default(DB::raw('CURRENT_TIMESTAMP'));
+            $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
+            $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP'));
         });
     }
 

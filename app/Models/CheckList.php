@@ -11,9 +11,9 @@ class CheckList extends Model
 
     public $timestamps = false;
 
-    // protected $hidden = ['created_date', 'updated_date'];
+    // protected $hidden = ['created_at', 'updated_at'];
 
-    protected $fillable = ['wallet_id','memo', 'amount', 'state', 'checked','user_id', 'status', 'created_date'];
+    protected $fillable = ['wallet_id','memo', 'amount', 'state', 'checked','user_id', 'status', 'created_at'];
 
     public function __construct(array $attributes = [])
     {

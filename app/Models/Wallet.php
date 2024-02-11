@@ -11,9 +11,9 @@ class Wallet extends Model
 
     public $timestamps = false;
 
-    protected $hidden = ['created_date', 'updated_date'];
+    protected $hidden = ['created_at', 'updated_at'];
 
-    protected $fillable = ['title','balance', 'status', 'created_date', 'updated_date'];
+    protected $fillable = ['title','balance', 'status', 'created_at', 'updated_at'];
 
     public function __construct(array $attributes = [])
     {

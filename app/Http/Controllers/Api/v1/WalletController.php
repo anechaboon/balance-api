@@ -30,8 +30,8 @@ class WalletController extends Controller
             DB::beginTransaction();
 
             $payload = request()->all();
-            $payload['created_date'] = date('Y-m-d H:i:s');
-            $payload['updated_date'] = date('Y-m-d H:i:s');
+            $payload['created_at'] = date('Y-m-d H:i:s');
+            $payload['updated_at'] = date('Y-m-d H:i:s');
             $payload['status'] = 1;
             $res = Wallet::create($payload);
 

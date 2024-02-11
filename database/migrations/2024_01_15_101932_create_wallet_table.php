@@ -19,8 +19,8 @@ class CreateWalletTable extends Migration
             $table->double('balance', 10, 2)->nullable();
             $table->unsignedBigInteger('default_expense_cate_id')->nullable();
             $table->boolean('status')->default(true);
-            $table->timestamp('created_date')->default(DB::raw('CURRENT_TIMESTAMP'));
-            $table->timestamp('updated_date')->default(DB::raw('CURRENT_TIMESTAMP'));
+            $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
+            $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP'));
         });
     }
 

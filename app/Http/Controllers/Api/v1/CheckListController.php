@@ -24,7 +24,7 @@ class CheckListController extends Controller
             $response->where('check_list.wallet_id', $request->walletId);
         }
         if($request->sort){
-            $response->orderBy('check_list.created_date', $request->sort);
+            $response->orderBy('check_list.created_at', $request->sort);
         }
         
         return $response->get();
@@ -50,8 +50,8 @@ class CheckListController extends Controller
                 foreach($payloads['check_list'] as $payload){
                     
                     unset($payload['id']);
-                    $payload['created_date'] = date('Y-m-d H:i:s');
-                    $payload['updated_date'] = date('Y-m-d H:i:s');
+                    $payload['created_at'] = date('Y-m-d H:i:s');
+                    $payload['updated_at'] = date('Y-m-d H:i:s');
                     $payload['status'] = 1;
                     $payload['wallet_id'] = $payload['wallet_id'];
                     $payload['checked'] = $payload['checked'] == true ? 1 : 0;
@@ -88,8 +88,8 @@ class CheckListController extends Controller
                 ]);
                 unset($payload['id']);
                 unset($payload['checked']);
-                $payload['created_date'] = date('Y-m-d H:i:s');
-                $payload['updated_date'] = date('Y-m-d H:i:s');
+                $payload['created_at'] = date('Y-m-d H:i:s');
+                $payload['updated_at'] = date('Y-m-d H:i:s');
                 $payload['status'] = 1;
                 $payload['wallet_id'] = $payloads['wallet_id'];
                 $payload['expense_category_id'] = $wallet->default_expense_cate_id;

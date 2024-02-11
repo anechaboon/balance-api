@@ -59,7 +59,7 @@ class HomeController extends Controller
         $incomeList->with('user');
 
         if($request->startDate && $request->endDate){
-            $incomeList->whereBetween('incomes.created_date', [$request->startDate,$request->endDate]);
+            $incomeList->whereBetween('incomes.created_at', [$request->startDate,$request->endDate]);
         }
             
         if($request->sort){
@@ -83,7 +83,7 @@ class HomeController extends Controller
 
         $res2 = $expenseList->get();
 
-        $res3 = $res1->concat($res2)->sortByDesc('created_date');
+        $res3 = $res1->concat($res2)->sortByDesc('created_at');
         $newCollection = [];
         foreach($res3 as $item){
             $newCollection[] = $item;
@@ -113,7 +113,7 @@ class HomeController extends Controller
             'expenses.status',
             DB::raw('sum(amount) as sum'),
         ])
-            ->whereBetween('created_date',[$startDate,$endDate])
+            ->whereBetween('created_at',[$startDate,$endDate])
             ->where([
                 'wallet_id' => $request->wallet_id
             ])

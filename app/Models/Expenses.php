@@ -12,9 +12,9 @@ class Expenses extends Model
 
     public $timestamps = false;
 
-    protected $hidden = ['created_date', 'updated_date'];
+    protected $hidden = ['created_at', 'updated_at'];
 
-    protected $fillable = ['wallet_id', 'expense_category_id', 'memo', 'amount', 'user_id', 'status', 'created_date', 'updated_date'];
+    protected $fillable = ['wallet_id', 'expense_category_id', 'memo', 'amount', 'user_id', 'status', 'created_at', 'updated_at'];
 
     // protected $appends = ['user'];
 
